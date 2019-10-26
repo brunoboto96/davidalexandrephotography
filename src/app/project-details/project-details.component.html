@@ -1,0 +1,167 @@
+<div class="container my-5 p-5 border bg-white">
+    <div *ngFor="let project of projects; index as projectId;">
+        <div *ngIf="project.url == projectURL">
+
+            <!-- 1:2 -->
+            <div class="row mb-5">
+                <div class="col-4 border h-100 p-3">
+                    <img src="./assets/img/logo/logo1.png" class="w-100" alt="">
+                </div>
+                <div class="col-8 p-0">
+                    <div class="col-11 border h-100 ml-auto p-5">
+                        <h2>{{ project.alias }} <span *ngIf="project.category != ''" class="h3">({{ project.category }})</span></h2>
+                        <p class="text-center">{{ project.descr }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 1:1:1 -->
+            <div class="row mb-5">
+                <div class="col-4 p-0">
+                    <div class="col-11 border p-3">
+                        <img src="{{ project.imgFolder }}1.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border mx-auto p-3">
+                        <img src="{{ project.imgFolder }}2.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border ml-auto p-3">
+                        <img src="{{ project.imgFolder }}3.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature row -->
+            <div class="row mb-5">
+                <div class="col-12 border p-3">
+                    <div style="background-color: black;">
+                        <div class="col-4 mx-auto p-1">
+                            <img src="{{ project.imgFolder }}4.png" class="w-100" alt="">
+                        </div>
+                    </div>
+                    <!--<div style="position: relative;
+                    bottom: 100%;
+                    right: 24%;
+                    height: 100%;
+                    width: 99vw;
+                    z-index: -1;
+                    background-color: black;">
+                    </div>-->
+                </div>
+            </div>
+
+            <!-- 2:1 -->
+            <div class="row mb-5">
+                <div class="col-8 p-0">
+                    <div class="col-12 border h-100 p-0">
+                        <img src="{{ project.imgFolder }}5.png" class="w-100 expanded" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border h-100 ml-auto p-3">
+                        <img src="{{ project.imgFolder }}6.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="row mb-5">
+                <div class="col-12 border p-3">
+                    <div class="col-8 h-100 p-5 mx-auto">
+                        <img src="{{ project.imgFolder }}7.png" class="w-100 expanded" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feature row -->
+            <div class="row mb-5">
+                <div class="col-12 border p-3">
+                    <div style="background-color: black;">
+                        <div class="col-4 mx-auto p-1">
+                            <img src="{{ project.imgFolder }}8.png" class="w-100" alt="">
+                        </div>
+                    </div>
+                  <!--  <div style="position: relative;
+                        bottom: 100%;
+                        right: 24%;
+                        height: 100%;
+                        width: 99vw;
+                        z-index: -1;
+                        background-color: black;">
+                    </div>-->
+                </div>
+            </div>
+
+            <!-- 1:1:1 -->
+            <div class="row mb-5">
+                <div class="col-4 p-0">
+                    <div class="col-11 border p-3">
+                        <img src="{{ project.imgFolder }}9.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border mx-auto p-3">
+                        <img src="{{ project.imgFolder }}10.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border ml-auto p-3">
+                        <img src="{{ project.imgFolder }}11.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1:1:1 -->
+            <div class="row mb-5">
+                <div class="col-4 p-0">
+                    <div class="col-11 border p-3">
+                        <img src="{{ project.imgFolder }}12.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border mx-auto p-3">
+                        <img src="{{ project.imgFolder }}13.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border ml-auto p-3">
+                        <img src="{{ project.imgFolder }}14.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 1:1:1 -->
+            <div class="row mb-5">
+                <div class="col-4 p-0">
+                    <div class="col-11 border p-3">
+                        <img src="{{ project.imgFolder }}15.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border mx-auto p-3">
+                        <img src="{{ project.imgFolder }}16.png" class="w-100" alt="">
+                    </div>
+                </div>
+                <div class="col-4 p-0">
+                    <div class="col-11 border ml-auto p-3">
+                        <img src="{{ project.imgFolder }}17.png" class="w-100" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="row">
+                <div class="col-12 border p-3">
+                    <div class="col-8 h-100 p-0 mx-auto">
+                        <img src="{{ project.imgFolder }}18.png" class="w-100 expanded" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>

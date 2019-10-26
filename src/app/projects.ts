@@ -1,57 +1,55 @@
 export const projects = [
     {
-        name: 'Cleaning Local Ponds',
-        alias: 'PondCleanerz',
-        url: 'PondCleanerz',
-        descr: 'Helping to clean local ponds.',
-        status: 'In Progress',//0 = TODO, 1 = In Progress, 2 = Completed, 3 = Needs Revising
-        img: './assets/img/project-list/pondcleanerz.gif',
-        category:'programming',
-        archive: 0,
-        static: 0
+        name: 'LYK CONCEPT',
+        alias: 'LYK',
+        url: 'LYKCONCEPT',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/lyk/',
+        category:'brand development'
     },
     {
-        name: 'Mary Etty Foundation',
-        alias: 'MEF',
-        url: 'MEF',
-        descr: 'Preventing Violence against women',
-        status: 'In Progress',
-        img: './assets/static/MEF/assets/img/mef/MEF.png',
-        category:'programming',
-        archive: 0,
-        static: 1
+        name: 'Project 2',
+        alias: 'PicAlias2',
+        url: 'PicAlias2',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/sample/',
+        category:'photo',
+        nrImages: 18
     },
     {
-        name: 'Xperiences',
-        alias: 'Xperiences',
-        url: 'Xperiences',
-        descr: 'Social Network',
-        status: 'In Progress',
-        img: './assets/static/Xperiences/assets/img/x.png',
-        category:'programming',
-        archive: 0,
-        static: 1
+        name: 'Project 3',
+        alias: 'PicAlias3',
+        url: 'PicAlias3',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/sample/',
+        category:'photo',
+        nrImages: 18
     },
     {
-        name: 'Diy Racing Drone',
-        alias: 'Drone',
-        url: 'Drone',
-        descr: 'Code: Arduino as Flight Controller, Intall: Speed Controllers, Motors, Soldering',
-        status: 'In Progress',
-        img: './assets/img/project-list/drone.jpg',
-        category:'microcontrollers',
-        archive: 0,
-        static: 0
+        name: 'Project 4',
+        alias: 'PicAlias4',
+        url: 'PicAlias4',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/sample/',
+        category:'photo',
+        nrImages: 18
     },
     {
-        name: 'Excel Tic-tac-toe',
-        alias: 'Excel Tic-tac-toe',
-        url: 'Excel-Tic-tac-toe',
-        descr: '4thelulz',
-        status: 'Finished',
-        img: './assets/img/project-list/pondcleanerz.gif',
-        category:'gamedev',
-        archive: 1,
-        static: 0
+        name: 'Project 5',
+        alias: 'PicAlias5',
+        url: 'PicAlias5',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/sample/',
+        category:'photo',
+        nrImages: 18
+    },
+    {
+        name: 'Project 6',
+        alias: 'PicAlias6',
+        url: 'PicAlias6',
+        descr: 'Small Project description',
+        imgFolder: './assets/img/projects/sample/',
+        category:'photo',
+        nrImages: 18
     }
   ];

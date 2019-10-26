@@ -1,190 +1,37 @@
-<section class="page-section bg-prime text-white lead py-2">
-    <div class="container my-5 text-center d-block">
-        <div class="avatar" style="background-image:url(&quot;./assets/img/avatar/avatar.jpg&quot;);"></div>
-        <p><strong>22 </strong><img src="./assets/img/pt.svg" width="25px&quot;" alt="PT"></p>
-        <div class="about-me">
-            <p>Hey there! I'm <strong>Bruno Boto&nbsp;</strong>. I am currently studying Computer Science Bsc. I have
-                passion for adventure, self-development, technology and sports.</p>
-        </div>
-    </div>
-</section>
+<img class="fixed-logo" src="./assets/img/logo/logo.png">
 
-
-<div class="dropdown-divider mb-3" id="projects"></div>
-
-<section class="page-section py-5">
-    <div class="container">
-        <!-- Portfolio Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Projects</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row mb-3">
-            <div *ngFor="let project of projects; index as projectId" class="col-sm-6 col-lg-3 d-flex">
-                <div *ngIf="project.archive == 0">
-                    <div *ngIf="project.static == 0" class="h-100">
-                        <div class="card h-100">
-                            <div class="badge badge-light">{{ project.status }}</div>
-                            <div style="height: 190px;">
-                                <img src="{{ project.img }}" class="card-img-top project-logo"
-                                    alt="{{ project.alias }}">
-                                <div class="card-img-overlay mt-1">
-                                    <h5 class="text-center text-light">{{ project.alias }}</h5>
-                                </div>
+<section class="page-section my-5">
+    <div class="container mb-5">
+        <div *ngFor="let project of projects; index as projectId; let c = count;">
+            <div *ngIf="(projectId ) < c">
+                <div *ngIf="projectId  % 2 == 0, else elseBlock">
+                    <div class="row">
+                        <a class="p-link cover d-flex" [routerLink]="['project/', projects[projectId].url]">
+                            <div class="col-4 px-0 py-0 h-100">
+                                <img src="assets/img/homepage/{{ projectId * 2 +1 }}.png" class="w-100 h-vh">
                             </div>
-                            <div class="card-body d-flex flex-column" style="z-index: 1">
-                                <a [routerLink]="['/categories', project.category]"
-                                    class="badge badge-dark p-1">{{ project.category }}</a><br>
-                                <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a>
-                                </h5>
-                                <p class="card-text">{{ project.descr }}</p>
-                                <a class="btn btn-primary text-white mt-auto" href="./app/projects/index.html">Enter</a>
+                            <div class="col-8 p-0">
+                                <img src="assets/img/homepage/{{ projectId * 2 + 2 }}.png" class="w-100 h-vh">
+                                <h3 class="p-title">{{ project.name }}</h3>
                             </div>
-                        </div>
-                    </div>
-                    <div *ngIf="project.static == 1" class="h-100">
-                        <div class="card h-100">
-                            <div class="badge badge-light">{{ project.status }}</div>
-                            <div style="height: 190px">
-                                <img src="{{ project.img }}" class="card-img-top project-logo"
-                                    alt="{{ project.alias }}">
-                                <div class="card-img-overlay mt-1">
-
-                                    <h5 class="text-center text-light">{{ project.alias }}</h5>
-                                </div>
-                            </div>
-                            <div class="card-body d-flex flex-column" style="z-index: 1">
-                                <a [routerLink]="['/categories', project.category]"
-                                    class="badge badge-dark p-1">{{ project.category }}</a><br>
-                                <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a>
-                                </h5>
-                                <p class="card-text">{{ project.descr }}</p>
-                                <a class="btn btn-primary text-white mt-auto"
-                                    href="assets/static/{{ project.url }}">Enter</a>
-                            </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
+                <ng-template #elseBlock>
+                    <div class="row">
+                        <a class="p-link cover d-flex" [routerLink]="['project/', projects[projectId].url]">
+                            <div class="col-8 px-0">
+                                <img src="assets/img/homepage/{{ projectId * 2 + 1 }}.png" class="w-100 h-vh">
+                                <h3 class="p-title">{{ project.name }}</h3>
+                            </div>
+                            <div class="col-4 px-0 py-0 h-100">
+                                <img src="assets/img/homepage/{{ projectId * 2 + 2 }}.png" class="w-100 h-vh">
+                            </div>
+                        </a>
+                    </div>
+                </ng-template>
             </div>
         </div>
     </div>
 </section>
 
-
-<section class="page-section bg-prime py-5">
-    <div class="container">
-        <!-- Portfolio Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Archive</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row">
-            <div *ngFor="let project of projects; index as projectId" class="col-sm-12 col-md-4 p-2 mb-3">
-                <div *ngIf="project.archive == 1">
-                    <div class="card">
-                        <div class="badge badge-light">{{ project.status }}</div>
-                        <div data-toggle="modal" data-target="#portfolioModal1" class="image-over bg-info text-white">
-                            <img src="{{ project.img }}" class="card-img-top project-logo" alt="{{ project.alias }}">
-                            <div class="card-img-overlay mt-1">
-                                <h5 class="text-center text-light">{{ project.alias }}</h5>
-                            </div>
-                        </div>
-                        <div class="card-body" style="z-index: 1">
-                            <h5 class="card-title"><a [title]="project.name + ' details'">{{ project.name }}</a></h5>
-                            <p class="card-text">{{ project.descr }}</p>
-                            <a class="btn btn-primary text-white" [routerLink]="['/projects', project.alias]">Enter</a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="page-section py-5">
-    <div class="container">
-        <!-- Portfolio Section Heading -->
-        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Special Skills</h2>
-
-        <!-- Icon Divider -->
-        <div class="divider-custom">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <div class="divider-custom-line"></div>
-        </div>
-        <div class="row">
-            <div *ngFor="let skill of skills; index as skillId" class="col-sm-12 col-md-4 p-2 mb-3">
-                <div class="card-header">
-                    <div class="text-center">
-                        <i class="material-icons md-96">movie</i>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title"><a [title]="skill.category + ' details'">{{ skill.category }}</a></h5>
-                        <p class="card-text">{{ skill.descr }}</p>
-                        <a class="btn btn-primary text-white" [routerLink]="['/skills', skillId]">Enter</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Portfolio Modal 1 -->
-<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog"
-    aria-labelledby="portfolioModal1Label" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">
-                    <i class="fas fa-times"></i>
-                </span>
-            </button>
-            <div class="modal-body text-center">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <!-- Portfolio Modal - Title -->
-                            <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Log Cabin</h2>
-                            <!-- Icon Divider -->
-                            <div class="divider-custom">
-                                <div class="divider-custom-line"></div>
-                                <div class="divider-custom-icon">
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div class="divider-custom-line"></div>
-                            </div>
-                            <!-- Portfolio Modal - Image -->
-                            <img class="img-fluid rounded mb-5" src="freelancer/img/portfolio/cabin.png" alt="">
-                            <!-- Portfolio Modal - Text -->
-                            <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit
-                                asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            <button class="btn btn-primary" href="#" data-dismiss="modal">
-                                <i class="fas fa-times fa-fw"></i>
-                                Close Window
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>

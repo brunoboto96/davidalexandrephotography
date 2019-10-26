@@ -1,149 +1,4 @@
-/* Global Styles 
 
-* {
-    font-family: 'Roboto', Arial, sans-serif;
-    color: #616161;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  body {
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  router-outlet + *  {
-    padding: 0 16px;
-  }
-  
-  /* Text 
-  
-  h1 {
-    font-size: 32px;
-  }
-  
-  h2 {
-    font-size: 20px;
-  }
-  
-  h1, h2 {
-    font-weight: lighter;
-  }
-  
-  p {
-    font-size: 14px;
-  }
-  
-  /* Hyperlink 
-  
-  a {
-    cursor: pointer;
-    color: #1976d2;
-    text-decoration: none;
-  }
-  
-  a:hover {
-    opacity: 0.8;
-  }
-  
-  /* Input 
-  
-  input {
-    font-size: 14px;
-    border-radius: 2px;
-    padding: 8px;
-    margin-bottom: 16px;
-    border: 1px solid #BDBDBD;
-  }
-  
-  label {
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 4px;
-    display: block;
-    text-transform: uppercase;
-  }
-  
-  /* Button 
-  .button, button {
-    display: inline-flex;
-    align-items: center;
-    padding: 8px 16px;
-    border-radius: 2px;
-    font-size: 14px;
-    cursor: pointer;
-    background-color: #1976d2;
-    color: white;
-    border: none;
-  }
-  
-  .button:hover, button:hover {
-    opacity: 0.8;
-    font-weight: normal;
-  }
-  
-  .button:disabled, button:disabled {
-    opacity: 0.5;
-    cursor: auto;
-  }
-  
-  /* Fancy Button */
-  
-  .fancy-button {
-    background-color: white;
-    color: #1976d2;
-  }
-  
-  .fancy-button i.material-icons {
-    color: #1976d2;
-    padding-right: 4px;
-  }
-  
-  /* Top Bar 
-
-  app-top-bar {
-    width: 100%;
-    height: 68px;
-    background-color: transparent;
-    background: linear-gradient(120deg, #7f70f5, #0ea0ff);
-    padding: 16px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: 600;
-  }
-  
-  app-top-bar h1 {
-    color: white;
-    margin: 0;
-  } 
-
-  .spacer {
-    flex: 1;
-  }
-  
-  /* Checkout Cart, Shipping Prices 
-  
-  .cart-item, .shipping-item {
-    width: 100%;
-    min-width: 400px;
-    max-width: 450px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 16px 32px;
-    margin-bottom: 8px;
-    border-radius: 2px;
-    background-color: #EEEEEE;
-  }
-  
- 
 */
   /* Icons Google Font */
   /* Rules for sizing the icon. */
@@ -153,19 +8,7 @@
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-96 { font-size: 96px; }
 
-.avatar {
-  width: 150px;
-  height: 150px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin: auto;
-  border-radius: 100px;
-  margin-bottom: 30px;
-}
 
-.bargrad {
-  background: linear-gradient(120deg, #7f70f5, #0ea0ff);
-}
 /* Rules for using icons as black on a light background. */
 .material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
 .material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
@@ -174,88 +17,57 @@
 .material-icons.md-light { color: rgba(255, 255, 255, 1); }
 .material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
 
-.project-logo {
-  max-height: 190px;
-}
- 
-.image-over:hover {
-  opacity: 0.3;
-}
-  
-.bg-prime {
-  background-color: #1abc9c;
+
+
+.fixed-logo {
+  width: 140px;
+  position: fixed;
+  bottom: 0;
+  left: 5%;
+  z-index: 50;
 }
 
-.divider-custom {
-  margin: 1.25rem 0 1.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center
+.cover {
+  transition: transform 3s, filter 1s ease-in-out;  
 }
 
-.divider-custom .divider-custom-line {
-  width: 100%;
-  max-width: 7rem;
-  height: .25rem;
-  background-color: #2c3e50;
-  border-radius: 1rem;
-  border-color: #2c3e50 !important
-}
-
-.divider-custom .divider-custom-line:first-child {
-  margin-right: 1rem
-}
-
-.divider-custom .divider-custom-line:last-child {
-  margin-left: 1rem
-}
-
-.divider-custom .divider-custom-icon {
-  color: #2c3e50 !important;
-  font-size: 2rem
-}
-
-.divider-custom.divider-light .divider-custom-line {
-  background-color: #fff
-}
-
-.divider-custom.divider-light .divider-custom-icon {
-  color: #fff !important
-}
-
-.page-section {
-  padding: 6rem 0
-}
-
-.page-section .page-section-heading {
-  font-size: 2.25rem;
-  line-height: 2rem
-}
-
-@media (min-width:992px) {
-  .page-section .page-section-heading {
-      font-size: 3rem;
-      line-height: 2.5rem
+@media only all and (max-width: 600px) {
+  .h-vh {
+    height: 20vh;
   }
 }
 
-.text-secondary {
-  color: #2c3e50 !important;
+.cover:hover {
+  filter: brightness(70%);
 }
 
-.bg-secondary {
-  background-color: #2c3e50 !important;
+
+.expanded {
+  transform: scale(1.1);
 }
 
-.navbar-brand {
-  color: white!important;
+.featured-row {
+
 }
 
-.nav-link {
-  color:white!important;
+.p-title {
+  color: lightcyan; 
+  text-decoration: none; /* no underline */
+  position: absolute;
+  background-color: black;
+  bottom: 10vh;
+  left: 10px;
+  transition: visibility 2s ease-in-out 1s;
+  visibility: hidden;
+  padding: 5px;
+  border-radius: 8px;
 }
 
-.col {
-  display: table-cell; /* Make elements inside the container behave like table cells */
+.p-link:hover .p-title{
+  visibility: visible;
+  
+}
+
+.h-vh {
+  height: 40vh;
 }

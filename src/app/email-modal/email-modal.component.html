@@ -1,0 +1,55 @@
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="contact" aria-hidden="true" id="contact">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- Portfolio Section Heading -->
+                <h2 class="modal-title text-center text-uppercase text-secondary mb-0">Contact me</h2>
+
+                <!-- Icon Divider -->
+                <div class="divider-custom">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="divider-custom-line"></div>
+                </div>
+
+                <button type="button" class="close" data-dismiss="modal" #closeModal aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="form" (ngSubmit)="sendEmail()">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Name" formControlName="name">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" formControlName="subject">
+                    </div>
+                    <div class="form-group">
+                        <label for="body">Body</label>
+                        <textarea class="form-control" id="body" rows="3" formControlName="body"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </div>
+
+                    <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">
+                        {{ successMessage }}</ngb-alert>
+
+                    <ngb-alert *ngIf="failedMessage" type="danger" (close)="failedMessage = null">{{ failedMessage }}
+                    </ngb-alert>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
